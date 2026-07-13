@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Santanu Gupta | Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #030712;
+            color: #f3f4f6;
+            overflow-x: hidden;
+        }
+
+        /* Aurora Background Animation */
+        .aurora-bg {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            z-index: -1;
+            overflow: hidden;
+            background: radial-gradient(circle at 50% 50%, #0f172a, #030712);
+        }
+        .blob {
+            position: absolute;
+            background: var(--blob-bg);
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            filter: blur(120px);
+            opacity: 0.25;
+            mix-blend-mode: screen;
+            animation: move 25s infinite alternate ease-in-out;
+        }
+        @keyframes move {
+            0% { transform: translate(0px, 0px) scale(1); }
+            50% { transform: translate(200px, -100px) scale(1.2); }
+            100% { transform: translate(-100px, 200px) scale(0.8); }
+        }
+
+        /* Glassmorphism utility classes */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-nav {
+            background: rgba(3, 7, 18, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* Scroll Reveal Base styling */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Aurora Background Blobs -->
+    <div class="aurora-bg">
+        <div class="blob" style="--blob-bg: #3b82f6; top: -10%; left: -10%; animation-delay: 0s;"></div>
+        <div class="blob" style="--blob-bg: #8b5cf6; bottom: -10%; right: -10%; animation-delay: -5s;"></div>
+        <div class="blob" style="--blob-bg: #06b6d4; top: 40%; left: 50%; animation-delay: -10s;"></div>
+    </div>
+
+    <!-- Header / Navbar -->
+    <nav class="glass-nav fixed top:0 left-0 w-full z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="#" class="text-xl font-bold tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">
+                SG.<span class="text-white">DEV</span>
+            </a>
+            <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-300">
+                <a href="#about" class="hover:text-blue-400 transition">About</a>
+                <a href="#skills" class="hover:text-blue-400 transition">Skills</a>
+                <a href="#experience" class="hover:text-blue-400 transition">Experience</a>
+                <a href="#projects" class="hover:text-blue-400 transition">Projects</a>
+                <a href="#certifications" class="hover:text-blue-400 transition">Certifications</a>
+                <a href="#contact" class="glass-panel px-5 py-2 rounded-full text-white hover:bg-white/10 transition">Get In Touch</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center justify-center pt-24 px-6 relative">
+        <div class="max-w-4xl text-center z-10">
+            <div class="inline-flex items-center gap-2 glass-panel px-4 py-1.5 rounded-full text-xs font-semibold tracking-wide text-blue-400 mb-6 border border-blue-500/20">
+                <span class="w-2 h-2 rounded-full bg-blue-400 animate-pulse"></span> Open For Opportunities
+            </div>
+            <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-4">
+                Hi, I'm <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-500">Santanu Gupta</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-400 font-light mb-8 h-8">
+                I am a <span id="typewriter" class="text-white font-medium border-r-2 border-blue-400 pr-1"></span>
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a href="#contact" class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-gradient-to-r from-blue-500 to-purple-600 font-medium hover:opacity-90 transition shadow-lg shadow-blue-500/20 text-center">
+                    Let's Connect
+                </a>
+                <a href="#" class="w-full sm:w-auto glass-panel px-8 py-3.5 rounded-xl font-medium hover:bg-white/10 transition text-center flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-download"></i> Download Resume
+                </a>
+            </div>
+            <div class="flex gap-6 justify-center mt-12 text-2xl text-gray-400">
+                <a href="https://github.com" target="_blank" class="hover:text-white transition"><i class="fa-brands fa-github"></i></a>
+                <a href="https://linkedin.com" target="_blank" class="hover:text-white transition"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Counter Bar -->
+    <section class="max-w-5xl mx-auto px-6 mb-24 reveal">
+        <div class="glass-panel grid grid-cols-2 md:grid-cols-4 gap-8 p-8 rounded-2xl text-center">
+            <div>
+                <div class="text-3xl md:text-4xl font-bold text-white mb-1"><span class="counter" data-target="15">0</span>+</div>
+                <div class="text-xs uppercase tracking-wider text-gray-400">Projects Built</div>
+            </div>
+            <div>
+                <div class="text-3xl md:text-4xl font-bold text-white mb-1"><span class="counter" data-target="10">0</span>+</div>
+                <div class="text-xs uppercase tracking-wider text-gray-400">Tech Stack Tools</div>
+            </div>
+            <div>
+                <div class="text-3xl md:text-4xl font-bold text-white mb-1"><span class="counter" data-target="5">0</span>+</div>
+                <div class="text-xs uppercase tracking-wider text-gray-400">Certifications</div>
+            </div>
+            <div>
+                <div class="text-3xl md:text-4xl font-bold text-white mb-1"><span class="counter" data-target="4">0</span>th</div>
+                <div class="text-xs uppercase tracking-wider text-gray-400">Year Engineering</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="max-w-5xl mx-auto px-6 py-20 reveal">
+        <div class="grid md:grid-cols-3 gap-12 items-center">
+            <div class="md:col-span-1 flex justify-center">
+                <div class="relative w-64 h-64 rounded-2xl overflow-hidden glass-panel p-2 group">
+                    <div class="w-full h-full rounded-xl bg-gradient-to-tr from-blue-600 to-purple-600 flex items-center justify-center text-6xl text-white">
+                        <i class="fa-solid fa-user-astronaut group-hover:scale-110 transition duration-300"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="md:col-span-2">
+                <h2 class="text-3xl font-bold mb-6">About Me</h2>
+                <p class="text-gray-400 leading-relaxed mb-4">
+                    I am a passionate **Software Engineering Student at NCIT**, deeply invested in modern Full-Stack development, AI/ML, and Cybersecurity ecosystem architecture. 
+                </p>
+                <p class="text-gray-400 leading-relaxed mb-6">
+                    With an cloud-first analytical mindset, I design and construct highly reliable, secured software platforms. Staying certified and testing bleeding-edge technology spaces drives my everyday learning routine.
+                </p>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="flex items-center gap-3 text-sm text-gray-300"><i class="fa-solid fa-graduation-cap text-blue-400"></i> NCIT Student</div>
+                    <div class="flex items-center gap-3 text-sm text-gray-300"><i class="fa-solid fa-cloud text-purple-400"></i> AWS Certified</div>
+                    <div class="flex items-center gap-3 text-sm text-gray-300"><i class="fa-solid fa-brain text-cyan-400"></i> AI Enthusiast</div>
+                    <div class="flex items-center gap-3 text-sm text-gray-300"><i class="fa-solid fa-shield-halved text-red-400"></i> Cyber Security</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="max-w-5xl mx-auto px-6 py-20 reveal">
+        <h2 class="text-3xl font-bold text-center mb-12">Expertise & Tech Stack</h2>
+        <div class="grid md:grid-cols-2 gap-8">
+            <div class="glass-panel p-6 rounded-2xl">
+                <h3 class="text-lg font-semibold mb-6 flex items-center gap-2 text-blue-400">
+                    <i class="fa-solid fa-code"></i> Frontend & Backend Development
+                </h3>
+                <div class="space-y-4">
+                    <div>
+                        <div class="flex justify-between text-sm text-gray-300 mb-1"><span>React & Next.js</span><span>90%</span></div>
+                        <div class="w-full bg-white/5 rounded-full h-2"><div class="bg-blue-500 h-2 rounded-full transition-all duration-1000 w-0" data-width="90%"></div></div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-sm text-gray-300 mb-1"><span>Node.js / Express</span><span>85%</span></div>
+                        <div class="w-full bg-white/5 rounded-full h-2"><div class="bg-indigo-500 h-2 rounded-full transition-all duration-1000 w-0" data-width="85%"></div></div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-sm text-gray-300 mb-1"><span>FastAPI / Python</span><span>80%</span></div>
+                        <div class="w-full bg-white/5 rounded-full h-2"><div class="bg-cyan-500 h-2 rounded-full transition-all duration-1000 w-0" data-width="80%"></div></div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-sm text-gray-300 mb-1"><span>Databases (MongoDB, Postgres)</span><span>85%</span></div>
+                        <div class="w-full bg-white/5 rounded-full h-2"><div class="bg-purple-500 h-2 rounded-full transition-all duration-1000 w-0" data-width="85%"></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="glass-panel p-6 rounded-2xl">
+                <h3 class="text-lg font-semibold mb-6 flex items-center gap-2 text-purple-400">
+                    <i class="fa-solid fa-server"></i> Cloud, AI & DevOps
+                </h3>
+                <div class="space-y-4">
+                    <div>
+                        <div class="flex justify-between text-sm text-gray-300 mb-1"><span>AWS Cloud Architecture</span><span>75%</span></div>
+                        <div class="w-full bg-white/5 rounded-full h-2"><div class="bg-amber-500 h-2 rounded-full transition-all duration-1000 w-0" data-width="75%"></div></div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-sm text-gray-300 mb-1"><span>TensorFlow & Machine Learning</span><span>70%</span></div>
+                        <div class="w-full bg-white/5 rounded-full h-2"><div class="bg-emerald-500 h-2 rounded-full transition-all duration-1000 w-0" data-width="70%"></div></div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-sm text-gray-300 mb-1"><span>Docker Containerization</span><span>80%</span></div>
+                        <div class="w-full bg-white/5 rounded-full h-2"><div class="bg-blue-400 h-2 rounded-full transition-all duration-1000 w-0" data-width="80%"></div></div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-sm text-gray-300 mb-1"><span>Git / CI-CD Workflows</span><span>90%</span></div>
+                        <div class="w-full bg-white/5 rounded-full h-2"><div class="bg-red-400 h-2 rounded-full transition-all duration-1000 w-0" data-width="90%"></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Timeline Section -->
+    <section id="experience" class="max-w-5xl mx-auto px-6 py-20 reveal">
+        <h2 class="text-3xl font-bold text-center mb-12">Journey & Timeline</h2>
+        <div class="relative border-l border-white/10 ml-4 md:ml-32 space-y-12">
+            <!-- Timeline Item 1 -->
+            <div class="relative pl-8">
+                <div class="absolute -left-3 top-1.5 w-6 h-6 rounded-full bg-blue-500 border-4 border-slate-950 flex items-center justify-center"></div>
+                <span class="text-xs font-semibold uppercase tracking-wider text-blue-400">2023 - Present</span>
+                <h3 class="text-xl font-bold text-white mt-1">Software Engineering Degree</h3>
+                <p class="text-sm font-medium text-gray-400">Nepal College of Information Technology (NCIT)</p>
+                <p class="text-gray-400 mt-2 text-sm max-w-2xl">Building core fundamentals in Algorithms, Software Design Architecture, Networking systems and executing dynamic full-stack client codebases.</p>
+            </div>
+            <!-- Timeline Item 2 -->
+            <div class="relative pl-8">
+                <div class="absolute -left-3 top-1.5 w-6 h-6 rounded-full bg-purple-500 border-4 border-slate-950 flex items-center justify-center"></div>
+                <span class="text-xs font-semibold uppercase tracking-wider text-purple-400">2024 - 2025</span>
+                <h3 class="text-xl font-bold text-white mt-1">Full Stack Freelance Project Head</h3>
+                <p class="text-sm font-medium text-gray-400">Independent Collaborations</p>
+                <p class="text-gray-400 mt-2 text-sm max-w-2xl">Successfully conceptualized and engineered institutional systems and modern responsive educational deployments globally.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="max-w-5xl mx-auto px-6 py-20 reveal">
+        <h2 class="text-3xl font-bold text-center mb-12">Featured Projects</h2>
+        <div class="grid md:grid-cols-2 gap-8">
+            <!-- Project 1 -->
+            <div class="glass-panel rounded-2xl overflow-hidden group hover:border-blue-500/30 transition duration-300">
+                <div class="h-48 bg-gradient-to-br from-blue-900/40 to-indigo-900/40 p-6 flex items-center justify-center relative overflow-hidden">
+                    <i class="fa-solid fa-brain text-7xl text-blue-400/30 group-hover:scale-110 transition duration-300"></i>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2">MediCare AI Healthcare Platform</h3>
+                    <p class="text-gray-400 text-sm mb-4">An advanced diagnostic AI portal built with FastAPI, React, and TensorFlow. Features high-accuracy medical prediction logic frameworks and secure data schemas.</p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="text-xs glass-panel px-3 py-1 rounded-full text-blue-300">FastAPI</span>
+                        <span class="text-xs glass-panel px-3 py-1 rounded-full text-blue-300">React</span>
+                        <span class="text-xs glass-panel px-3 py-1 rounded-full text-blue-300">TensorFlow</span>
+                    </div>
+                    <div class="flex gap-4">
+                        <a href="#" class="text-sm font-medium text-white hover:text-blue-400 transition flex items-center gap-1">Code <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i></a>
+                    </div>
+                </div>
+            </div>
+            <!-- Project 2 -->
+            <div class="glass-panel rounded-2xl overflow-hidden group hover:border-purple-500/30 transition duration-300">
+                <div class="h-48 bg-gradient-to-br from-purple-900/40 to-pink-900/40 p-6 flex items-center justify-center relative overflow-hidden">
+                    <i class="fa-solid fa-school text-7xl text-purple-400/30 group-hover:scale-110 transition duration-300"></i>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2">Heaven Kids Montessori Website</h3>
+                    <p class="text-gray-400 text-sm mb-4">Ultra-clean, modern operational responsive dynamic layout optimized for seamless parent-teacher interactions, custom curriculum tables and media panels.</p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="text-xs glass-panel px-3 py-1 rounded-full text-purple-300">React</span>
+                        <span class="text-xs glass-panel px-3 py-1 rounded-full text-purple-300">Tailwind CSS</span>
+                        <span class="text-xs glass-panel px-3 py-1 rounded-full text-purple-300">Node.js</span>
+                    </div>
+                    <div class="flex gap-4">
+                        <a href="#" class="text-sm font-medium text-white hover:text-purple-400 transition flex items-center gap-1">Live Demo <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="max-w-5xl mx-auto px-6 py-20 reveal">
+        <h2 class="text-3xl font-bold text-center mb-12">Professional Certifications</h2>
+        <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+            <div class="glass-panel p-6 rounded-2xl flex items-start gap-4">
+                <div class="text-3xl text-amber-400"><i class="fa-brands fa-aws"></i></div>
+                <div>
+                    <h3 class="font-bold text-white text-sm">AWS Cloud Certified</h3>
+                    <p class="text-xs text-gray-400 mt-1">Amazon Web Services Validation</p>
+                </div>
+            </div>
+            <div class="glass-panel p-6 rounded-2xl flex items-start gap-4">
+                <div class="text-3xl text-blue-400"><i class="fa-solid fa-shield-halved"></i></div>
+                <div>
+                    <h3 class="font-bold text-white text-sm">Cybersecurity Fundamentals</h3>
+                    <p class="text-xs text-gray-400 mt-1">Enterprise Infra Auditing</p>
+                </div>
+            </div>
+            <div class="glass-panel p-6 rounded-2xl flex items-start gap-4">
+                <div class="text-3xl text-cyan-400"><i class="fa-solid fa-gears"></i></div>
+                <div>
+                    <h3 class="font-bold text-white text-sm">Deep Learning Specialist</h3>
+                    <p class="text-xs text-gray-400 mt-1">Neural Networks Concepts</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="max-w-3xl mx-auto px-6 py-20 reveal">
+        <div class="glass-panel p-8 md:p-12 rounded-3xl">
+            <h2 class="text-3xl font-bold text-center mb-2">Get In Touch</h2>
+            <p class="text-center text-gray-400 text-sm mb-8">Have a project or opportunity you want to collaborate on?</p>
+            <form class="space-y-6" onsubmit="event.preventDefault();">
+                <div class="grid sm:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wide mb-2">Your Name</label>
+                        <input type="text" class="w-full glass-panel px-4 py-3 rounded-xl text-white outline-none focus:border-blue-500 transition text-sm">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wide mb-2">Email Address</label>
+                        <input type="email" class="w-full glass-panel px-4 py-3 rounded-xl text-white outline-none focus:border-blue-500 transition text-sm">
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wide mb-2">Message</label>
+                    <textarea rows="5" class="w-full glass-panel px-4 py-3 rounded-xl text-white outline-none focus:border-blue-500 transition text-sm resize-none"></textarea>
+                </div>
+                <button type="submit" class="w-full py-4 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl font-medium tracking-wide hover:opacity-90 transition shadow-lg shadow-blue-500/10">
+                    Send Message
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-white/5 py-8 text-center text-xs text-gray-500">
+        <p>&copy; 2026 Santanu Gupta. Built with passion & pure glassmorphism logic.</p>
+    </footer>
+
+    <!-- JavaScript Effects Implementation -->
+    <script>
+        // 1. Typewriter Effect
+        const words = ["Full Stack Developer.", "Software Engineering Student (NCIT).", "AI & Machine Learning Enthusiast.", "Cybersecurity Enthusiast."];
+        let i = 0, timer;
+
+        function typingEffect() {
+            let word = words[i].split("");
+            var loopTyping = function() {
+                if (word.length > 0) {
+                    document.getElementById('typewriter').innerHTML += word.shift();
+                } else {
+                    setTimeout(deletingEffect, 2000);
+                    return false;
+                }
+                timer = setTimeout(loopTyping, 80);
+            };
+            loopTyping();
+        }
+
+        function deletingEffect() {
+            let word = words[i].split("");
+            var loopDeleting = function() {
+                if (word.length > 0) {
+                    word.pop();
+                    document.getElementById('typewriter').innerHTML = word.join("");
+                } else {
+                    if (words.length > (i + 1)) i++;
+                    else i = 0;
+                    setTimeout(typingEffect, 500);
+                    return false;
+                }
+                timer = setTimeout(loopDeleting, 40);
+            };
+            loopDeleting();
+        }
+        typingEffect();
+
+        // 2. Scroll Reveal & Skill Progress Animations
+        const revealElements = document.querySelectorAll('.reveal');
+        const skillBars = document.querySelectorAll('[data-width]');
+
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting){
+                    entry.target.classList.add('active');
+                    
+                    // If element contains skill bars, animate them
+                    const bars = entry.target.querySelectorAll('[data-width]');
+                    bars.forEach(bar => {
+                        bar.style.width = bar.getAttribute('data-width');
+                    });
+                }
+            });
+        }, { threshold: 0.1 });
+
+        revealElements.forEach(el => revealObserver.observe(el));
+
+        // 3. Stats Counter Animation
+        const counters = document.querySelectorAll('.counter');
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    const counter = entry.target;
+                    const target = +counter.getAttribute('data-target');
+                    const count = +counter.innerText;
+                    const speed = 100; 
+                    
+                    const updateCount = () => {
+                        const current = +counter.innerText;
+                        const increment = Math.ceil(target / speed);
+                        if(current < target) {
+                            counter.innerText = current + increment;
+                            setTimeout(updateCount, 20);
+                        } else {
+                            counter.innerText = target;
+                        }
+                    }
+                    updateCount();
+                    counterObserver.unobserve(counter);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        counters.forEach(c => counterObserver.observe(c));
+    </script>
+</body>
+</html>
